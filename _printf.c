@@ -5,6 +5,7 @@
 /**
  * pc - print a char
  * @args: the argument to print
+ * Return: 1
  */
 
 int pc(va_list args)
@@ -16,6 +17,7 @@ int pc(va_list args)
 /**
  * ps - print a string
  * @args: the argument to print
+ * Return: 1
  */
 
 int ps(va_list args)
@@ -30,13 +32,14 @@ int ps(va_list args)
 /**
  * pp - print nothing
  * @args: print nothing
+ * Return: 1
  */
 
 int pp(va_list args)
 {
 	(void)args;
 	_putchar('%');
-	return(1);
+	return (1);
 }
 
 /**
@@ -49,10 +52,11 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 
-	funckey checker[3] = {
+	funckey checker[] = {
 		{"c", pc},
 		{"s", ps},
-		{"%", pp}
+		{"%", pp},
+		{NULL, NULL}
 	};
 
 	va_list parameter;

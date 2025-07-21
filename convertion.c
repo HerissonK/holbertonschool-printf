@@ -3,7 +3,7 @@
 #include <stddef.h>
 
 /**
- * conversion - Receives the main string and all the necessary parameters
+ * convertion - Receives the main string and all the necessary parameters
  * to print a formated string.
  * @format: A string containing all the desired characters.
  * @checker: A list of all the posible functions.

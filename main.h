@@ -5,6 +5,9 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int pc(va_list args);
+int ps(va_list args);
+int pp(va_list args);
 
 /**
  * struct funckey - struct to find the argument
