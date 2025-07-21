@@ -53,10 +53,10 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	funckey checker[] = {
-		{"c", pc},
-		{"s", ps},
-		{"%", pp},
-		{NULL, NULL}
+		{'c', pc},
+		{'s', ps},
+		{'%', pp},
+		{'\0', NULL}
 	};
 
 	va_list parameter;

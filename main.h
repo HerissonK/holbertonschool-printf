@@ -19,7 +19,7 @@ int pp(va_list args);
 
 typedef struct funckey
 {
-	char *spec;
+	char spec;
 	int (*f)(va_list);
 } funckey;
 

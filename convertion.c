@@ -21,9 +21,9 @@ int convertion(const char *format, funckey checker[], va_list parameter)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; checker[j].spec != NULL; j++)
+			for (j = 0; checker[j].spec != '\0'; j++)
 			{
-				if (format[i + 1] == checker[j].spec[0])
+				if (format[i + 1] == checker[j].spec)
 				{
 					r_val = checker[j].f(parameter);
 					if (r_val == -1)
@@ -32,7 +32,7 @@ int convertion(const char *format, funckey checker[], va_list parameter)
 					break;
 				}
 			}
-			if (checker[j].spec == NULL && format[i + 1] != ' ')
+			if (checker[j].spec == '\0' && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '\0')
 				{
