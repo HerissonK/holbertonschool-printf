@@ -22,11 +22,14 @@ int pc(va_list args)
 
 int ps(va_list args)
 {
-	char *s = va_arg(args, char*);
+	int index;
+	char *s = va_arg(args, char *);
 
-	while (*s)
-		_putchar(*s++);
-	return (1);
+	if (s == NULL)
+		s = "(null)";
+	for (index = 0; s[index] != '\0'; index++)
+		_putchar(s[index]);
+	return (index);
 }
 
 /**
