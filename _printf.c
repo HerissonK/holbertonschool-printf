@@ -2,57 +2,54 @@
 #include "main.h"
 #include <stdarg.h>
 
-void pc(char c)
+void pc(va_list args)
 {
+	char c = va_arg(args,int);
 	_putchar(c);
 }
-
-void ps(char *s)
+void ps(va_list args)
 {
+	char *s = va_arg(args, char*);
 	while (*s)
-	{
 		_putchar(*s++);
-	}
 }
-
-void pp(void)
+void pp(va_list args)
 {
+	(void)args;
 	_putchar('%');
 }
-
-/**
- * _printf - Entry point
- *
- * Return: the number of characters printed
- */
-
 int _printf(const char *format, ...)
 {
-	const char *pointer;
 	va_list parameter;
-	unsigned int i;
-	int j;
-
+	int count = 0;
+	int i = 0;
 
 	funckey checker[3] = {
-		{pc, 'c'}, {ps, 's'}, {pp, '%'}
-	}
-	va_start parameter
-		while (format != NULL && *pointeur)
+		{pc, 'c'},
+		{ps, 's'},
+		{pp, '%'}
+	};
+	va_start (parameter, format);
+	while (*format)
+	{
+		if (*format == '%' && *(format + 1))
 		{
-			if (checker[i].spec == *pointeur)
+			format++;
+
+			for (i = 0; i < 3; i++)
 			{
-				if (j)
-				{
-					j = 1;
-				}
-				checker[i].f(parameter);
-				pointeur++
-				i = -1;
+				if (checker[i].spec == *format)
+					checker[i].f(parameter);
+				break;
 			}
-			i++;
-			pointeur += i / 3;
-			i %= 3:
+			if (i == 3)
+				_putchar('%');
+			_putchar(*format);
 		}
-	va_end(parameter)
+		else
+			_putchar(*format);
+		format++;
+	}
+	va_end(parameter);
+	return count;
 }
