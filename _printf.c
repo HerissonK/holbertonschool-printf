@@ -47,7 +47,7 @@ void pp(va_list args)
 int _printf(const char *format, ...)
 {
 	va_list parameter;
-
+	int count = 0;
 	int i = 0;
 
 	funckey checker[3] = {
@@ -83,5 +83,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(parameter);
-	return (0);
+	return (count);
 }
