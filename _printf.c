@@ -7,11 +7,10 @@
  * @args: the argument to print
  */
 
-void pc(va_list args)
+int pc(va_list args)
 {
-	char c = va_arg(args, int);
-
-	_putchar(c);
+	_putchar(va_arg(args, int));
+	return (1);
 }
 
 /**
@@ -19,12 +18,13 @@ void pc(va_list args)
  * @args: the argument to print
  */
 
-void ps(va_list args)
+int ps(va_list args)
 {
 	char *s = va_arg(args, char*);
 
 	while (*s)
 		_putchar(*s++);
+	return (1);
 }
 
 /**
@@ -32,10 +32,11 @@ void ps(va_list args)
  * @args: print nothing
  */
 
-void pp(va_list args)
+int pp(va_list args)
 {
 	(void)args;
 	_putchar('%');
+	return(1);
 }
 
 /**
@@ -46,42 +47,24 @@ void pp(va_list args)
 
 int _printf(const char *format, ...)
 {
-	va_list parameter;
 	int count = 0;
-	int i = 0;
 
 	funckey checker[3] = {
-		{pc, 'c'},
-		{ps, 's'},
-		{pp, '%'}
+		{"c", pc},
+		{"s", ps},
+		{"%", pp}
 	};
-	va_start(parameter, format);
-	while (*format)
-	{
-		if (*format == '%' && *(format + 1))
-		{
-			format++;
 
-			for (i = 0; i < 3; i++)
-			{
-				if (checker[i].spec == *format)
-				{
-					checker[i].f(parameter);
-					break;
-				}
-			}
-			if (i == 3)
-			{
-				_putchar('%');
-				_putchar(*format);
-			}
-		}
-		else
-		{
-			_putchar(*format);
-		}
-		format++;
-	}
+	va_list parameter;
+
+	if (format == NULL)
+		return (-1);
+
+	va_start(parameter, format);
+
+	count = convertion(format, checker, parameter);
+
 	va_end(parameter);
+
 	return (count);
 }

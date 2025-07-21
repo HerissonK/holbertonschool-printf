@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdarg.h>
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 
@@ -14,8 +16,10 @@ int _printf(const char *format, ...);
 
 typedef struct funckey
 {
-	void (*f)(va_list);
-	char spec;
+	char *spec;
+	int (*f)(va_list);
 } funckey;
+
+int convertion(const char *format, funckey checker[], va_list parameter);
 
 #endif
