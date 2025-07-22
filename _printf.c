@@ -15,6 +15,8 @@ int _printf(const char *format, ...)
 		{'c', pc},
 		{'s', ps},
 		{'%', pp},
+		{'i', pi},
+		{'d', pd},
 		{'\0', NULL}
 	};
 

@@ -42,3 +42,25 @@ int pp(va_list args)
         _putchar('%');
         return (1);
 }
+
+/**
+ *
+ */
+
+int pi(va_list args)
+{
+	int len;
+
+	len = signed_num(args);
+	return (len);
+}
+
+
+
+int pd(va_list args)
+{
+	int len;
+
+	len = signed_num(args);
+	return (len);
+}
