@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 		{'o', po},
 		{'x', px},
 		{'X', pxx},
+		{'p', pptr},
 		{'\0', NULL}
 	};
 

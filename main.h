@@ -15,11 +15,13 @@ int pu(va_list args);
 int po(va_list args);
 int px(va_list args);
 int pxx(va_list args);
+int pptr(va_list args);
 int signed_num(va_list args);
 int print_unsigned_number(unsigned int list);
 int printstr(char *str);
 char *itoa(long int num, int base);
 int buffer(int c);
+int _strcmp(char *s1, char *s2);
 
 /**
  * struct funckey - struct to find the argument
