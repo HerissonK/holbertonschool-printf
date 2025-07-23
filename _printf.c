@@ -18,6 +18,10 @@ int _printf(const char *format, ...)
 		{'i', pi},
 		{'d', pd},
 		{'b', pb},
+		{'u', pu},
+		{'o', po},
+		{'x', px},
+		{'X', pxx},
 		{'\0', NULL}
 	};
 

@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_binary - Print a number in base 2
- * @list: Number to print in base 2
+ * pb - print a number in base 2
+ * @args: Number to print in base 2
  *
  * Return: Length of the numbers in binary
  **/
