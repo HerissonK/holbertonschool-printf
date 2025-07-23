@@ -19,7 +19,7 @@ int signed_num(va_list args);
 int print_unsigned_number(unsigned int list);
 int printstr(char *str);
 char *itoa(long int num, int base);
-int buffer(char c);
+int buffer(int c);
 
 /**
  * struct funckey - struct to find the argument

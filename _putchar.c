@@ -23,7 +23,7 @@ int _putchar(char c)
  */
 
 
-int buffer(char c)
+int buffer(int c)
 {
 	static char buffering[1024];
 	static int i = 0;
