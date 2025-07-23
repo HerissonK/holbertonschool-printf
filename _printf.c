@@ -34,6 +34,8 @@ int _printf(const char *format, ...)
 
 	count = convertion(format, checker, parameter);
 
+	_putchar(-1);
+
 	va_end(parameter);
 
 	return (count);
