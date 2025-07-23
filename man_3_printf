@@ -1,0 +1,72 @@
+_PRINTF 3 "July 2025" "Holberton School" "User Manual"
+
+
+NAME
+_printf \- formatted output conversion
+
+
+SYNOPSIS
+#include <stdio.h>
+int _putchar(char c);
+int _printf(const char *format, ...);
+
+
+#include <stdarg.h>
+int pc(va_list args);
+int ps(va_list args);
+int pp(va_list args);
+int pi(va_list args);
+int pd(va_list args);
+int signed_num(va_list args);
+int print_unsigned_number(unsigned int list);
+
+
+DESCRIPTION
+The _printf() function produces output according to a specified.
+
+The format string, in a similar manner to the standard.
+
+Supported format specifiers include:
+%c : Print a single character.
+%s : Print a string.
+%% : Print a literal '%' character.
+%d, %i : Print a signed decimal integer.
+
+
+RETURN VALUE
+The function returns the number of characters printed
+(excluding the null byte used to end output to strings).
+
+
+EXAMPLE
+#include "main.h"
+int main(void)
+{
+	int len;
+	int len2;
+	unsigned int ui;
+	void *addr;
+
+    	len = _printf("Let's try to printf a simple sentence.\n");
+    	ui = (unsigned int)INT_MAX + 1024;
+	addr = (void *)0x7ffe637541f0;
+	_printf("Length:[%d, %i]\n", len, len);
+	_printf("Negative:[%d]\n", -762534);
+	_printf("Unsigned:[%u]\n", ui);
+	_printf("Unsigned octal:[%o]\n", ui);
+	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+	_printf("Character:[%c]\n", 'H');
+	_printf("String:[%s]\n", "I am a string !");
+	_printf("Address:[%p]\n", addr);
+	_printf("Len:[%d]\n", len);
+	_printf("Unknown:[%r]\n");
+ 	return (0);
+}
+
+
+AUTHOR
+Kevin Herisson / Georgia Boulnois
+
+
+SEE ALSO
+printf(3), putchar(3), va_start(3), va_arg(3), va_end(3)
