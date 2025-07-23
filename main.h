@@ -10,8 +10,11 @@ int ps(va_list args);
 int pp(va_list args);
 int pi(va_list args);
 int pd(va_list args);
+int pb(va_list args);
 int signed_num(va_list args);
 int print_unsigned_number(unsigned int list);
+int printstr(char *str);
+char *itoa(long int num, int base);
 
 /**
  * struct funckey - struct to find the argument
